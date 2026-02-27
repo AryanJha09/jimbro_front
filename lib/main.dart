@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:jim_front/core/theme/app_colors.dart';
-import 'package:jim_front/core/theme/app_text.dart';
-import 'package:jim_front/features/opening/opening_screen.dart';
+import 'core/theme/app_colors.dart';
+import 'core/theme/app_text.dart';
+import 'features/opening/opening_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,27 +14,27 @@ class JimBroApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'JimBro',
       debugShowCheckedModeBanner: false,
 
-      /// App Theme
       theme: ThemeData(
         useMaterial3: true,
         scaffoldBackgroundColor: AppColors.background,
 
         colorScheme: ColorScheme.fromSeed(
           seedColor: AppColors.accent,
-          background: AppColors.background,
+          surface: AppColors.background,
         ),
 
-        textTheme: TextTheme(
-          headlineLarge: AppText.title.copyWith(
-            fontSize: 42,
-          ),
+        textTheme: const TextTheme(
+          headlineLarge: AppText.largeTitle,
+          titleLarge: AppText.title,
           bodyLarge: AppText.body,
+          bodyMedium: AppText.body,
+          labelLarge: AppText.button,
         ),
       ),
 
-      /// Initial Screen
       home: const OpeningScreen(),
     );
   }

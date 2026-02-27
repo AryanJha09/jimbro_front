@@ -14,4 +14,5 @@ class AppColors {
 
   // UI
   static const Color divider = Color(0xFFE3E0DA);
+  
 }
