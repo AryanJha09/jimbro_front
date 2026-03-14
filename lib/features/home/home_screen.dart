@@ -116,12 +116,7 @@ class _HomeScreenState extends State<HomeScreen> {
             Center(
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => const ProfileScreen(),
-                    ),
-                  );
+                  Navigator.pushNamed(context, '/profile');
                 },
                 child: const Text("Go To Profile"),
               ),

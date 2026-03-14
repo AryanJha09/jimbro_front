@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'core/theme/app_colors.dart';
 import 'core/theme/app_text.dart';
+
 import 'features/opening/opening_screen.dart';
+import 'features/home/home_screen.dart';
+import 'features/profile/profile_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,12 +23,10 @@ class JimBroApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
         scaffoldBackgroundColor: AppColors.background,
-
         colorScheme: ColorScheme.fromSeed(
           seedColor: AppColors.accent,
           surface: AppColors.background,
         ),
-
         textTheme: const TextTheme(
           headlineLarge: AppText.largeTitle,
           titleLarge: AppText.title,
@@ -35,7 +36,12 @@ class JimBroApp extends StatelessWidget {
         ),
       ),
 
-      home: const OpeningScreen(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const OpeningScreen(),
+        '/home': (context) => const HomeScreen(),
+        '/profile': (context) => const ProfileScreen(),
+      },
     );
   }
 }
