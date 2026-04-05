@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'core/theme/app_colors.dart';
-import 'core/theme/app_text.dart';
 
-import 'features/opening/opening_screen.dart';
-import 'features/home/home_screen.dart';
-import 'features/profile/profile_screen.dart';
+// Correct package name
+import 'package:jimbro/core/theme/app_colors.dart';
+import 'package:jimbro/core/theme/app_text.dart';
+
+import 'package:jimbro/features/splash/splash_screen.dart';
+import 'package:jimbro/features/opening/opening_screen.dart';
+import 'package:jimbro/features/profile/profile_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,7 +27,6 @@ class JimBroApp extends StatelessWidget {
         scaffoldBackgroundColor: AppColors.background,
         colorScheme: ColorScheme.fromSeed(
           seedColor: AppColors.accent,
-          surface: AppColors.background,
         ),
         textTheme: const TextTheme(
           headlineLarge: AppText.largeTitle,
@@ -36,10 +37,11 @@ class JimBroApp extends StatelessWidget {
         ),
       ),
 
-      initialRoute: '/',
+      initialRoute: '/splash',
+
       routes: {
-        '/': (context) => const OpeningScreen(),
-        '/home': (context) => const HomeScreen(),
+        '/splash': (context) => const SplashScreen(),
+        '/opening': (context) => const OpeningScreen(),
         '/profile': (context) => const ProfileScreen(),
       },
     );
